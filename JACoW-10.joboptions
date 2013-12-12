@@ -1,0 +1,573 @@
+<<
+  /ASCII85EncodePages true
+  /AllowTransparency false
+  /AutoPositionEPSFiles false
+  /AutoRotatePages /None
+  /Binding /Left
+  /CalGrayProfile ()
+  /CalRGBProfile (sRGB IEC61966-2.1)
+  /CalCMYKProfile (U.S. Web Coated \050SWOP\051 v2)
+  /sRGBProfile (sRGB IEC61966-2.1)
+  /CannotEmbedFontPolicy /Warning
+  /CompatibilityLevel 1.6
+  /CompressObjects /Off
+  /CompressPages true
+  /ConvertImagesToIndexed true
+  /PassThroughJPEGImages true
+  /CreateJDFFile false
+  /CreateJobTicket false
+  /DefaultRenderingIntent /Default
+  /DetectBlends true
+  /DetectCurves 0.0000
+  /ColorConversionStrategy /LeaveColorUnchanged
+  /DoThumbnails false
+  /EmbedAllFonts true
+  /EmbedOpenType true
+  /ParseICCProfilesInComments true
+  /EmbedJobOptions true
+  /DSCReportingLevel 0
+  /EmitDSCWarnings false
+  /EndPage -1
+  /ImageMemory 524288
+  /LockDistillerParams true
+  /MaxSubsetPct 100
+  /Optimize true
+  /OPM 1
+  /ParseDSCComments false
+  /ParseDSCCommentsForDocInfo false
+  /PreserveCopyPage true
+  /PreserveDICMYKValues true
+  /PreserveEPSInfo false
+  /PreserveFlatness true
+  /PreserveHalftoneInfo false
+  /PreserveOPIComments false
+  /PreserveOverprintSettings true
+  /StartPage 1
+  /SubsetFonts false
+  /TransferFunctionInfo /Preserve
+  /UCRandBGInfo /Remove
+  /UsePrologue false
+  /ColorSettingsFile ()
+  /AlwaysEmbed [ true
+    /ABSALOM
+    /AgencyFB-Bold
+    /AgencyFB-Reg
+    /Algerian
+    /ALIBI
+    /AllegroBT-Regular
+    /Arial-Black
+    /Arial-BlackItalic
+    /Arial-BoldItalicMT
+    /Arial-BoldMT
+    /Arial-ItalicMT
+    /ArialMT
+    /ArialNarrow
+    /ArialNarrow-Bold
+    /ArialNarrow-BoldItalic
+    /ArialNarrow-Italic
+    /ArialRoundedMTBold
+    /ArialUnicodeMS
+    /AvantGardeITCbyBT-Book
+    /AvantGardeITCbyBT-BookOblique
+    /AvantGardeITCbyBT-Demi
+    /AvantGardeITCbyBT-DemiOblique
+    /BankGothicBT-Medium
+    /BaskOldFace
+    /Batang
+    /BATAVIA
+    /Bauhaus93
+    /BellMT
+    /BellMTBold
+    /BellMTItalic
+    /BenguiatITCbyBT-Bold
+    /BerlinSansFB-Bold
+    /BerlinSansFBDemi-Bold
+    /BerlinSansFB-Reg
+    /BernardMT-Condensed
+    /BernhardFashionBT-Regular
+    /BernhardModernBT-Bold
+    /BernhardModernBT-BoldItalic
+    /BlackadderITC-Regular
+    /BodoniMT
+    /BodoniMTBlack
+    /BodoniMTBlack-Italic
+    /BodoniMT-Bold
+    /BodoniMT-BoldItalic
+    /BodoniMTCondensed
+    /BodoniMTCondensed-Bold
+    /BodoniMTCondensed-BoldItalic
+    /BodoniMTCondensed-Italic
+    /BodoniMT-Italic
+    /BodoniMTPosterCompressed
+    /BookAntiqua
+    /BookAntiqua-Bold
+    /BookAntiqua-BoldItalic
+    /BookAntiqua-Italic
+    /BookmanOldStyle
+    /BookmanOldStyle-Bold
+    /BookmanOldStyle-BoldItalic
+    /BookmanOldStyle-Italic
+    /BookshelfSymbolSeven
+    /BradleyHandITC
+    /BremenBT-Bold
+    /BritannicBold
+    /Broadway
+    /BrushScriptMT
+    /Calibri
+    /Calibri-Bold
+    /Calibri-BoldItalic
+    /Calibri-Italic
+    /CalifornianFB-Bold
+    /CalifornianFB-Italic
+    /CalifornianFB-Reg
+    /CalisMTBol
+    /CalistoMT
+    /CalistoMT-BoldItalic
+    /CalistoMT-Italic
+    /Cambria
+    /Cambria-Bold
+    /Cambria-BoldItalic
+    /Cambria-Italic
+    /CambriaMath
+    /Candara
+    /Candara-Bold
+    /Candara-BoldItalic
+    /Candara-Italic
+    /CASMIRA
+    /Castellar
+    /Centaur
+    /Century
+    /CenturyGothic
+    /CenturyGothic-Bold
+    /CenturyGothic-BoldItalic
+    /CenturyGothic-Italic
+    /CenturySchoolbook
+    /CenturySchoolbook-Bold
+    /CenturySchoolbook-BoldItalic
+    /CenturySchoolbook-Italic
+    /CharlesworthBold
+    /Chiller-Regular
+    /ColonnaMT
+    /ComicSansMS
+    /ComicSansMS-Bold
+    /Consolas
+    /Consolas-Bold
+    /Consolas-BoldItalic
+    /Consolas-Italic
+    /Constantia
+    /Constantia-Bold
+    /Constantia-BoldItalic
+    /Constantia-Italic
+    /CooperBlack
+    /CopperplateGothic-Bold
+    /CopperplateGothicBT-Bold
+    /CopperplateGothic-Light
+    /Corbel
+    /Corbel-Bold
+    /Corbel-BoldItalic
+    /Corbel-Italic
+    /CourierNewPS-BoldItalicMT
+    /CourierNewPS-BoldMT
+    /CourierNewPS-ItalicMT
+    /CourierNewPSMT
+    /CurlzMT
+    /DauphinPlain
+    /EdwardianScriptITC
+    /ELEGANCE
+    /Elephant-Italic
+    /Elephant-Regular
+    /ELLIS
+    /English111VivaceBT-Regular
+    /EngraversMT
+    /ErasITC-Bold
+    /ErasITC-Demi
+    /ErasITC-Light
+    /ErasITC-Medium
+    /EstrangeloEdessa
+    /EXCESS
+    /FelixTitlingMT
+    /FootlightMTLight
+    /ForteMT
+    /FranklinGothic-Book
+    /FranklinGothic-BookItalic
+    /FranklinGothic-Demi
+    /FranklinGothic-DemiCond
+    /FranklinGothic-DemiItalic
+    /FranklinGothic-Heavy
+    /FranklinGothic-HeavyItalic
+    /FranklinGothic-Medium
+    /FranklinGothic-MediumCond
+    /FranklinGothic-MediumItalic
+    /FreestyleScript-Regular
+    /FrenchScriptMT
+    /FuturaBlackBT-Regular
+    /FuturaBT-Bold
+    /FuturaBT-BoldItalic
+    /FuturaBT-ExtraBlack
+    /FuturaBT-Light
+    /FuturaBT-LightItalic
+    /Garamond
+    /Garamond-Bold
+    /Garamond-Italic
+    /Gautami
+    /GENUINE
+    /Georgia
+    /Georgia-Bold
+    /Georgia-BoldItalic
+    /Georgia-Italic
+    /Gigi-Regular
+    /GillSansMT
+    /GillSansMT-Bold
+    /GillSansMT-BoldItalic
+    /GillSansMT-Condensed
+    /GillSansMT-ExtraCondensedBold
+    /GillSansMT-Italic
+    /GillSans-UltraBold
+    /GillSans-UltraBoldCondensed
+    /GloucesterMT-ExtraCondensed
+    /GoudyHandtooledBT-Regular
+    /GoudyOldStyleBT-Bold
+    /GoudyOldStyleBT-BoldItalic
+    /GoudyOldStyleBT-Italic
+    /GoudyOldStyleBT-Roman
+    /GoudyOldStyleT-Bold
+    /GoudyOldStyleT-Italic
+    /GoudyOldStyleT-Regular
+    /GoudyStout
+    /Haettenschweiler
+    /HarlowSolid
+    /Harrington
+    /HELTERSKELTER
+    /HERMAN
+    /HighTowerText-Italic
+    /HighTowerText-Reg
+    /Humanist521BT-Bold
+    /Humanist521BT-BoldItalic
+    /Humanist521BT-Italic
+    /Humanist521BT-Roman
+    /Impact
+    /ImprintMT-Shadow
+    /InformalRoman-Regular
+    /ISABELLE
+    /JOAN
+    /Jokerman-Regular
+    /JuiceITC-Regular
+    /JUSTICE
+    /KabelITCbyBT-Book
+    /KabelITCbyBT-Ultra
+    /Kartika
+    /KristenITC-Regular
+    /KunstlerScript
+    /Latha
+    /LatinWide
+    /Lithograph-Bold
+    /LithographLight
+    /LucidaBright
+    /LucidaBright-Demi
+    /LucidaBright-DemiItalic
+    /LucidaBright-Italic
+    /LucidaCalligraphy-Italic
+    /LucidaConsole
+    /LucidaFax
+    /LucidaFax-Demi
+    /LucidaFax-DemiItalic
+    /LucidaFax-Italic
+    /LucidaHandwriting-Italic
+    /LucidaSans
+    /LucidaSans-Demi
+    /LucidaSans-DemiItalic
+    /LucidaSans-Italic
+    /LucidaSans-Typewriter
+    /LucidaSans-TypewriterBold
+    /LucidaSans-TypewriterBoldOblique
+    /LucidaSans-TypewriterOblique
+    /LucidaSansUnicode
+    /Magneto-Bold
+    /MaiandraGD-Regular
+    /MANDELA
+    /Mangal-Regular
+    /Mathematica1
+    /Mathematica1-Bold
+    /Mathematica1Mono
+    /Mathematica1Mono-Bold
+    /Mathematica2
+    /Mathematica2-Bold
+    /Mathematica2Mono
+    /Mathematica2Mono-Bold
+    /Mathematica3
+    /Mathematica3-Bold
+    /Mathematica3Mono
+    /Mathematica3Mono-Bold
+    /Mathematica4
+    /Mathematica4-Bold
+    /Mathematica4Mono
+    /Mathematica4Mono-Bold
+    /Mathematica5
+    /Mathematica5-Bold
+    /Mathematica5Mono
+    /Mathematica5Mono-Bold
+    /Mathematica6
+    /Mathematica6Bold
+    /Mathematica6Mono
+    /Mathematica6MonoBold
+    /Mathematica7
+    /Mathematica7Bold
+    /Mathematica7Mono
+    /Mathematica7MonoBold
+    /MATTEROFFACT
+    /MaturaMTScriptCapitals
+    /MICRODOT
+    /MicrosoftSansSerif
+    /Mistral
+    /Modern-Regular
+    /MonotypeCorsiva
+    /MS-Gothic
+    /MS-Mincho
+    /MSOutlook
+    /MS-PGothic
+    /MS-PMincho
+    /MSReferenceSansSerif
+    /MSReferenceSpecialty
+    /MS-UIGothic
+    /MT-Extra
+    /MVBoli
+    /NATURALBORN
+    /NEOLITH
+    /NiagaraEngraved-Reg
+    /NiagaraSolid-Reg
+    /OCRAExtended
+    /OldEnglishTextMT
+    /Onyx
+    /OPENCLASSIC
+    /OzHandicraftBT-Roman
+    /PalaceScriptMT
+    /PalatinoLinotype-Bold
+    /PalatinoLinotype-BoldItalic
+    /PalatinoLinotype-Italic
+    /PalatinoLinotype-Roman
+    /Papyrus-Regular
+    /Parchment-Regular
+    /Perpetua
+    /Perpetua-Bold
+    /Perpetua-BoldItalic
+    /Perpetua-Italic
+    /PerpetuaTitlingMT-Bold
+    /PerpetuaTitlingMT-Light
+    /Playbill
+    /PMingLiU
+    /PoorRichard-Regular
+    /PosterBodoniBT-Roman
+    /PRETEXT
+    /Pristina-Regular
+    /PUPPYLIKE
+    /Raavi
+    /RADAGUND
+    /RageItalic
+    /Ravie
+    /REALVIRTUE
+    /Rockwell
+    /Rockwell-Bold
+    /Rockwell-BoldItalic
+    /Rockwell-Condensed
+    /Rockwell-CondensedBold
+    /Rockwell-ExtraBold
+    /Rockwell-Italic
+    /ScriptMTBold
+    /SerifaBT-Bold
+    /SerifaBT-Italic
+    /SerifaBT-Roman
+    /SerifaBT-Thin
+    /SHELMAN
+    /ShowcardGothic-Reg
+    /Shruti
+    /SimSun
+    /SnapITC-Regular
+    /SouvenirITCbyBT-DemiItalic
+    /SouvenirITCbyBT-Light
+    /SouvenirITCbyBT-LightItalic
+    /Staccato222BT-Regular
+    /Stencil
+    /Swiss911BT-ExtraCompressed
+    /Sylfaen
+    /SymbolMT
+    /Tahoma
+    /Tahoma-Bold
+    /TempusSansITC
+    /TimesNewRomanPS-BoldItalicMT
+    /TimesNewRomanPS-BoldMT
+    /TimesNewRomanPS-ItalicMT
+    /TimesNewRomanPSMT
+    /Trebuchet-BoldItalic
+    /TrebuchetMS
+    /TrebuchetMS-Bold
+    /TrebuchetMS-Italic
+    /TRENDY
+    /Tunga-Regular
+    /TwCenMT-Bold
+    /TwCenMT-BoldItalic
+    /TwCenMT-Condensed
+    /TwCenMT-CondensedBold
+    /TwCenMT-CondensedExtraBold
+    /TwCenMT-Italic
+    /TwCenMT-Regular
+    /TypoUprightBT-Regular
+    /Verdana
+    /Verdana-Bold
+    /Verdana-BoldItalic
+    /Verdana-Italic
+    /VinerHandITC
+    /Vivaldii
+    /VladimirScript
+    /Vrinda
+    /Webdings
+    /Wingdings2
+    /Wingdings3
+    /Wingdings-Regular
+    /WP-ArabicScriptSihafa
+    /WP-ArabicSihafa
+    /WP-BoxDrawing
+    /WP-CyrillicA
+    /WP-CyrillicB
+    /WP-GreekCentury
+    /WP-GreekCourier
+    /WP-GreekHelve
+    /WP-HebrewDavid
+    /WP-IconicSymbolsA
+    /WP-IconicSymbolsB
+    /WP-Japanese
+    /WP-MathA
+    /WP-MathB
+    /WP-MathExtendedA
+    /WP-MathExtendedB
+    /WP-MultinationalAHelve
+    /WP-MultinationalARoman
+    /WP-MultinationalBCourier
+    /WP-MultinationalBHelve
+    /WP-MultinationalBRoman
+    /WP-MultinationalCourier
+    /WP-Phonetic
+    /WPTypographicSymbols
+    /ZapfElliptical711BT-Bold
+    /ZapfElliptical711BT-BoldItalic
+    /ZapfElliptical711BT-Italic
+    /ZapfElliptical711BT-Roman
+    /ZurichBT-RomanExtended
+    /ZWAdobeF
+  ]
+  /NeverEmbed [ true
+  ]
+  /AntiAliasColorImages false
+  /CropColorImages true
+  /ColorImageMinResolution 300
+  /ColorImageMinResolutionPolicy /OK
+  /DownsampleColorImages true
+  /ColorImageDownsampleType /Bicubic
+  /ColorImageResolution 300
+  /ColorImageDepth -1
+  /ColorImageMinDownsampleDepth 1
+  /ColorImageDownsampleThreshold 1.50000
+  /EncodeColorImages true
+  /ColorImageFilter /DCTEncode
+  /AutoFilterColorImages true
+  /ColorImageAutoFilterStrategy /JPEG
+  /ColorACSImageDict <<
+    /QFactor 0.15
+    /HSamples [1 1 1 1] /VSamples [1 1 1 1]
+  >>
+  /ColorImageDict <<
+    /QFactor 0.76
+    /HSamples [2 1 1 2] /VSamples [2 1 1 2]
+  >>
+  /JPEG2000ColorACSImageDict <<
+    /TileWidth 256
+    /TileHeight 256
+    /Quality 15
+  >>
+  /JPEG2000ColorImageDict <<
+    /TileWidth 256
+    /TileHeight 256
+    /Quality 15
+  >>
+  /AntiAliasGrayImages false
+  /CropGrayImages true
+  /GrayImageMinResolution 300
+  /GrayImageMinResolutionPolicy /OK
+  /DownsampleGrayImages true
+  /GrayImageDownsampleType /Bicubic
+  /GrayImageResolution 300
+  /GrayImageDepth -1
+  /GrayImageMinDownsampleDepth 2
+  /GrayImageDownsampleThreshold 1.50000
+  /EncodeGrayImages true
+  /GrayImageFilter /DCTEncode
+  /AutoFilterGrayImages true
+  /GrayImageAutoFilterStrategy /JPEG
+  /GrayACSImageDict <<
+    /QFactor 0.15
+    /HSamples [1 1 1 1] /VSamples [1 1 1 1]
+  >>
+  /GrayImageDict <<
+    /QFactor 0.76
+    /HSamples [2 1 1 2] /VSamples [2 1 1 2]
+  >>
+  /JPEG2000GrayACSImageDict <<
+    /TileWidth 256
+    /TileHeight 256
+    /Quality 15
+  >>
+  /JPEG2000GrayImageDict <<
+    /TileWidth 256
+    /TileHeight 256
+    /Quality 15
+  >>
+  /AntiAliasMonoImages false
+  /CropMonoImages true
+  /MonoImageMinResolution 1200
+  /MonoImageMinResolutionPolicy /OK
+  /DownsampleMonoImages true
+  /MonoImageDownsampleType /Bicubic
+  /MonoImageResolution 1200
+  /MonoImageDepth -1
+  /MonoImageDownsampleThreshold 1.50000
+  /EncodeMonoImages true
+  /MonoImageFilter /CCITTFaxEncode
+  /MonoImageDict <<
+    /K -1
+  >>
+  /AllowPSXObjects false
+  /CheckCompliance [
+    /None
+  ]
+  /PDFX1aCheck false
+  /PDFX3Check false
+  /PDFXCompliantPDFOnly false
+  /PDFXNoTrimBoxError true
+  /PDFXTrimBoxToMediaBoxOffset [
+    0.00000
+    0.00000
+    0.00000
+    0.00000
+  ]
+  /PDFXSetBleedBoxToMediaBox true
+  /PDFXBleedBoxToTrimBoxOffset [
+    0.00000
+    0.00000
+    0.00000
+    0.00000
+  ]
+  /PDFXOutputIntentProfile (None)
+  /PDFXOutputConditionIdentifier ()
+  /PDFXOutputCondition ()
+  /PDFXRegistryName (http://www.color.org)
+  /PDFXTrapped /False
+
+  /SyntheticBoldness 1.000000
+  /Description <<
+    /ENG ()
+    /ENU (Setup for JACoW - paper size, embed all fonts, compression, Acrobat 7 compatibility.)
+  >>
+>> setdistillerparams
+<<
+  /HWResolution [600 600]
+  /PageSize [595.000 791.000]
+>> setpagedevice

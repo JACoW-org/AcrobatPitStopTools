@@ -1,0 +1,26 @@
+Quick info for Acrobat/PitStop/PowerPoint scripts and tools 
+
+* JACoW-09.joboptions - JACoW 2009 JobOptions for Acrobat Distiller
+* JACoW-10.joboptions - JACoW 2010 JobOptions for Acrobat Distiller
+* JACoW Media Box.eal - JACoW Crop Media Box Action List for Enfocus PitStop
+* JACoWSetDot.js - JACoW Acrobat extension to assign dots+ on paper
+* SplitAnimations.ppa - PowerPoint add-in to split animation when creating PDF
+
+
+Instructions on how to use these files.
+
+JobOptions:
+copy the file into the Acrobat | Settings folder (or import via Distiller
+via the "Settings | Add Adobe PDF Settings..." menu entry.
+
+Media Box Action List:
+Import from PitStop "Run Action List" menu item by right-clicking on the "Local"
+folder and then choosing "Import/Export..."
+
+JACoWSetDot.js
+Copy this file into the JavaScript extensions folder.
+For Windows, it defaults to 
+C:\Program Files\Adobe\Acrobat 9.0\Acrobat\Javascripts
+
+SplitAnimations.ppa
+Put it into the \Microsoft\Addins folder.

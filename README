@@ -21,6 +21,9 @@ JACoWSetDot.js
 Copy this file into the JavaScript extensions folder.
 For Windows, it defaults to 
 C:\Program Files\Adobe\Acrobat 9.0\Acrobat\Javascripts
+Also, remember to set a security option in Acrobat's preferences, otherwise
+the script won't work. Go under Edit->Preferences->General->JavaScript 
+and check the "Enable menu items JavaScript execution privileges" option.
 
 SplitAnimations.ppa
 Put it into the \Microsoft\Addins folder.

@@ -1,20 +1,26 @@
-/* JACoW SetDot v20130522.1
-   by Ivan Andrian (C) ivan.andrian@elettra.eu 2013
+/* JACoW SetDot v20140612
+   by Ivan Andrian (C) ivan.andrian@elettra.eu 2013-14
    Sets the file(paperID) name, editor's name, timestamp 
    and a red/yellow/green dot on the top right corner of the
    first page of the document (in JACoW page size)
    See http://www.JACoW.org for more information
+   
+   History:
+   v20140612   - Added some additional stripping to the filename to be used as PaperCode
+   v20130522.1 - First production release, used in IPAC13
  */
 
+var Version = "v20140612";
+ 
 // see http://partners.adobe.com/public/developer/en/acrobat/sdk/AcroJS.pdf for JS Reference
 // and http://acrobatusers.com/tutorials/how-save-pdf-acrobat-javascript for save as etc.
 
-app.addMenuItem({ cName: "----------JACoW utils---------", cParent: "File", nPos: 1, cExec: "{}"});
+app.addMenuItem({ cName: "----------  " + Version + "  ---------", cParent: "File", nPos: 1, cExec: "{}"});
 app.addMenuItem({ cName: "Save as PS", cUser: "Save as PS", cParent: "File", nPos: 1, cExec: "PrintPS()"});
 app.addMenuItem({ cName: "RED dot", cUser: "RED dot", cParent: "File", nPos: 1, cExec: "SetDot('red')"});
 app.addMenuItem({ cName: "YELLOW dot", cUser: "YELLOW dot", cParent: "File", nPos: 1, cExec: "SetDot('yellow')"});
 app.addMenuItem({ cName: "GREEN dot", cUser: "GREEN dot", cParent: "File", nPos: 1, cExec: "SetDot('green')"});
-app.addMenuItem({ cName: "----------JACoW utils---------", cParent: "File", nPos: 1, cExec: "{}"});
+app.addMenuItem({ cName: "----------JACoW utils ---------", cParent: "File", nPos: 1, cExec: "{}"});
 
 
 function SetDot(_arg) {
@@ -146,9 +152,10 @@ function SetDot(_arg) {
 
 
 function PrintPS(_arg) {
-	var re = /.*\/|\_AUTHOR.*\.pdf|\.pdf$/ig;
+	var re1 = /.*\/|\_AUTHOR.*\.pdf|\.pdf$/ig;
+	var re2 = /\.PDF\.AUTODISTILL/ig;
 	var PathArr = this.path.split("/");
 	PathArr.pop();
-	PathArr.push(this.path.replace(re,"") +".ps");
+	PathArr.push(this.path.replace(re1,"").replace(re2,"") +".ps");
 	this.saveAs(PathArr.join("/"), "com.adobe.acrobat.ps");
 }

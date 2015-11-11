@@ -1,4 +1,4 @@
-/* JACoW SetDot v20140613
+/* JACoW SetDot v20150504.0
    by Ivan Andrian (C) ivan.andrian@elettra.eu 2013-14
    Sets the file(paperID) name, editor's name, timestamp 
    and a red/yellow/green dot on the top right corner of the
@@ -6,6 +6,9 @@
    See http://www.JACoW.org for more information
    
    History:
+   v20150504.0 - Check filename and show alert if contain AUTODISTILL
+   v20150501.0 - Added Brown Dot
+   v20150430.0 - Added BarCode
    v20140613.x - Automatic Checks on MediaSize & Cropping (and it's Friday 13!)
    v20140612   - Added some additional stripping to the filename to be used as PaperCode
    v20130522.1 - First production release, used in IPAC13
@@ -15,7 +18,7 @@
    
  */
 
-var Version = "v20140613.0";
+var Version = "v20150504.0";
 var JACoWMediaBox = [0, 792, 595, 0];
 
 app.addMenuItem({ cName: "---------- " + Version + " ---------", cParent: "File", nPos: 1, cExec: "{}"});
@@ -23,6 +26,7 @@ app.addMenuItem({ cName: "---------- " + Version + " ---------", cParent: "File"
 //app.addMenuItem({ cName: "Separator", cUser: " ", cParent: "File", nPos: 1, cExec: "{}"});
 app.addMenuItem({ cName: "Save as Cropped PS", cUser: "Save as Cropped PS", cParent: "File", nPos: 1, cExec: "PrintPS()"});
 app.addMenuItem({ cName: "Crop MediaBox", cUser: "Crop", cParent: "File", nPos: 1, cExec: "CropAll()"});
+app.addMenuItem({ cName: "BROWN dot", cUser: "BROWN dot", cParent: "File", nPos: 1, cExec: "SetDot('brown')"});
 app.addMenuItem({ cName: "RED dot", cUser: "RED dot", cParent: "File", nPos: 1, cExec: "SetDot('red')"});
 app.addMenuItem({ cName: "YELLOW dot", cUser: "YELLOW dot", cParent: "File", nPos: 1, cExec: "SetDot('yellow')"});
 app.addMenuItem({ cName: "GREEN dot", cUser: "GREEN dot", cParent: "File", nPos: 1, cExec: "SetDot('green')"});
@@ -48,37 +52,54 @@ function SetDot(_arg) {
 	var proceed = false;
 	var docNumPages = this.numPages;
 	
+	// check filename
+	if (this.path.indexOf( 'AUTODISTILL' ) != -1) {
+		app.alert( "Bad FileName please cut off AUTODISTILL!" , 0, 0, "Bad FileName");
+		return;
+	}
+	
+	
 	// create the dot
-	var dot = this.addAnnot(
-		{
+	var dot = this.addAnnot( {
 		page: 0,
 		author: author,
 		name: "JACoWdot",
 		popupOpen: false,
-		rect: dcoords,
+		rect: dcoords
 		});
 		
 	switch (_arg) {
+		case 'brown':
+			proceed = true;
+			dot.type = "Circle";
+			dot.strokeColor =dot.fillColor =['RGB', 117/255, 71/255, 25/255];
+
+			var dot2 = this.addAnnot( {
+				page: 0,
+				author: author,
+				name: "JACoWdot2",
+				popupOpen: false,
+				rect: [x+Math.random()*5, y+Math.random()*5, x +dotSize-5, y +dotSize-5]
+			});	
+			dot2.type = "Circle";
+			dot2.strokeColor =dot2.fillColor =['RGB', 155/255, 125/255, 92/255];
+			break;
 		case 'red':
 			proceed = true;
 			dot.type = "Square";
-			dot.strokeColor =color.red;
-			dot.fillColor =color.red;
+			dot.strokeColor =dot.fillColor =color.red;
 			break;
 		case 'yellow':
 			proceed = checkMediaBox(this, 0, docNumPages);
 			dot.type = "Circle";
-			dcolor =color.yellow;
-			dot.strokeColor =['RGB',1,.88,0];
-			dot.fillColor =['RGB',1,.88,0];
+			dot.strokeColor =dot.fillColor =['RGB',1,.88,0];
 			QAarea= true;
 			break;
 		case 'green':
 			proceed = checkMediaBox(this, 0, docNumPages);
 			dot.type = "Polygon";
 			dot.vertices = [[x, y], [x, y +dotSize], [x +dotSize, y +dotSize/2]];
-			dot.strokeColor =color.green;
-			dot.fillColor =color.green;
+			dot.strokeColor =dot.fillColor =color.green;
 			QAarea= true;
 			break;
 	}
@@ -107,27 +128,41 @@ function SetDot(_arg) {
 		}
 		
 		// file name
-		x =60; 
-		y =780;
+		x =60; y =780;
 		var fd =this.addField("PaperCode", "text", 0, [ x, y, TotWidth -x, y -15 ]);
-		fd.value =FileNM ;
+		fd.value =FileNM;
 		fd.textSize =14; 
 		fd.readonly =true;
 		fd.alignment ="right";
 		
 		// date
-		x =60; 
-		y =765;
+		x =60; y =765;
 		var fd2 =this.addField("AuthorDate", "text", 0, [ x, y, TotWidth -x, y -15 ]);
 		fd2.value =author + "  " + util.printd(AcDateFormat, AcDate);
 		fd2.textSize =8; 
 		fd2.readonly =true;
-		fd2.alignment ="right";
-			
+		fd2.alignment ="right";		
+
+		// barcode
+		var PathArr = this.path.split("/");
+		var fname =PathArr.pop();
+		var FnameArr =fname.split(".");
+		var barcode ="*" +FnameArr.shift() +"*";
+
+		x =60; y =780;
+		var fd3 =this.addField("BarCode", "text", 0, [ x, y, TotWidth -x, y -30 ]);
+		fd3.value =barcode;
+		fd3.textFont ="CCode39";
+		fd3.textSize =20; 
+		fd3.readonly =true;
+		fd3.alignment ="left";
+
+
 		app.execMenuItem("Print");
 		
 		this.removeField("PaperCode");
 		this.removeField("AuthorDate");
+		this.removeField("BarCode");
 		if (QAarea) {
 			qdot.destroy();
 			this.removeField("QAd");
@@ -136,6 +171,8 @@ function SetDot(_arg) {
 		app.alert("Bad MediaBox for at least one page.\rUse the \"Save as Cropped PS\" function,\rdistill and try again!" , 0, 0, "Bad MediaBox");
 	}
 	dot.destroy();
+	
+	if (_arg == 'brown') dot2.destroy();
 		
 		/*
 		var fdd = this.addAnnot(

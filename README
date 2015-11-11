@@ -5,6 +5,7 @@ Quick info for Acrobat/PitStop/PowerPoint scripts and tools
 * JACoW Media Box.eal - JACoW Crop Media Box Action List for Enfocus PitStop
 * JACoWSetDot.js - JACoW Acrobat extension to assign dots+ on paper
 * SplitAnimations.ppa - PowerPoint add-in to split animation when creating PDF
+* SplitAnimations.ppt - "Workspace" for developing the SplitAnimations.ppa PowerPoint add-in
 
 
 Instructions on how to use these files.

@@ -6,6 +6,7 @@
    See http://www.JACoW.org for more information
    
    History:
+   v20151123   - Barcode new font
    v20150504.0 - Check filename and show alert if contain AUTODISTILL
    v20150501.0 - Added Brown Dot
    v20150430.0 - Added BarCode
@@ -18,7 +19,8 @@
    
  */
 
-var Version = "v20150504.0";
+var Version = "v20151123";
+var PrintBarcode =true;
 var JACoWMediaBox = [0, 792, 595, 0];
 
 app.addMenuItem({ cName: "---------- " + Version + " ---------", cParent: "File", nPos: 1, cExec: "{}"});
@@ -144,25 +146,30 @@ function SetDot(_arg) {
 		fd2.alignment ="right";		
 
 		// barcode
-		var PathArr = this.path.split("/");
-		var fname =PathArr.pop();
-		var FnameArr =fname.split(".");
-		var barcode ="*" +FnameArr.shift() +"*";
+		if (PrintBarcode) {
+			var PathArr = this.path.split("/");
+			var fname =PathArr.pop();
+			var FnameArr =fname.split(".");
+			var barcode ="*" +FnameArr.shift() +"*";
 
-		x =60; y =780;
-		var fd3 =this.addField("BarCode", "text", 0, [ x, y, TotWidth -x, y -30 ]);
-		fd3.value =barcode;
-		fd3.textFont ="CCode39";
-		fd3.textSize =20; 
-		fd3.readonly =true;
-		fd3.alignment ="left";
+			x =60; y =780;
+			var fd3 =this.addField("BarCode", "text", 0, [ x, y, TotWidth -x, y -30 ]);
+			fd3.value =barcode;
+			fd3.textFont ="Free3of9Extended";
+//			fd3.textFont ="3of9Barcode";
+//			fd3.textFont ="CCode39";
+			fd3.textSize =28; 
+			fd3.readonly =true;
+			fd3.alignment ="left";
+		}
 
 
 		app.execMenuItem("Print");
 		
 		this.removeField("PaperCode");
 		this.removeField("AuthorDate");
-		this.removeField("BarCode");
+		if (PrintBarcode) this.removeField("BarCode");
+		
 		if (QAarea) {
 			qdot.destroy();
 			this.removeField("QAd");

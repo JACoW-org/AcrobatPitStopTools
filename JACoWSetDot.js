@@ -6,6 +6,7 @@
    See http://www.JACoW.org for more information
    
    History:
+   v20160506   - To overcome a security issue on Windows 10 that prevents getting the user's name
    v20151123   - Barcode new font
    v20150504.0 - Check filename and show alert if contain AUTODISTILL
    v20150501.0 - Added Brown Dot
@@ -19,7 +20,7 @@
    
  */
 
-var Version = "v20151123";
+var Version = "v20160506";
 var PrintBarcode =true;
 var JACoWMediaBox = [0, 792, 595, 0];
 
@@ -35,8 +36,18 @@ app.addMenuItem({ cName: "GREEN dot", cUser: "GREEN dot", cParent: "File", nPos:
 app.addMenuItem({ cName: "----------JACoW utils ---------", cParent: "File", nPos: 1, cExec: "{}"});
 
 
+// Identity name privileged function
+// this fixes an issue with the apparently increased security context in Windowd 10
+// see https://acrobatusers.com/tutorials/using_trusted_functions
+var get_identity_name = app.trustedFunction( function() {
+	app.beginPriv();
+		return identity.name; 
+	app.endPriv();
+});
+
+
 function SetDot(_arg) {
-	var author = identity.name;
+	var author = get_identity_name();
 	var re = /.*\/|\.pdf$/ig;
 	var FileNM = this.path.replace(re,"");
 	var Path = this.path;

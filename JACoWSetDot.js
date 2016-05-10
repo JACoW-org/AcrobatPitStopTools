@@ -6,6 +6,7 @@
    See http://www.JACoW.org for more information
    
    History:
+   v20160507   - Added Cols Guides
    v20160506   - To overcome a security issue on Windows 10 that prevents getting the user's name
    v20151123   - Barcode new font
    v20150504.0 - Check filename and show alert if contain AUTODISTILL
@@ -20,15 +21,18 @@
    
  */
 
-var Version = "v20160506";
+var Version = "v20160507";
 var PrintBarcode =true;
 var JACoWMediaBox = [0, 792, 595, 0];
+
+var ColsGuidesBox =[291, 792, 305, 0];
 
 app.addMenuItem({ cName: "---------- " + Version + " ---------", cParent: "File", nPos: 1, cExec: "{}"});
 //app.addMenuItem({ cName: "Get Page MediaBox", cUser: "Get Page MediaBox", cParent: "File", nPos: 1, cExec: "AlertMS()"});
 //app.addMenuItem({ cName: "Separator", cUser: " ", cParent: "File", nPos: 1, cExec: "{}"});
 app.addMenuItem({ cName: "Save as Cropped PS", cUser: "Save as Cropped PS", cParent: "File", nPos: 1, cExec: "PrintPS()"});
 app.addMenuItem({ cName: "Crop MediaBox", cUser: "Crop", cParent: "File", nPos: 1, cExec: "CropAll()"});
+app.addMenuItem({ cName: "Cols Guides", cUser: "Cols Guides On/Off", cParent: "File", nPos: 1, cExec: "ColsGuidesShow()"});
 app.addMenuItem({ cName: "BROWN dot", cUser: "BROWN dot", cParent: "File", nPos: 1, cExec: "SetDot('brown')"});
 app.addMenuItem({ cName: "RED dot", cUser: "RED dot", cParent: "File", nPos: 1, cExec: "SetDot('red')"});
 app.addMenuItem({ cName: "YELLOW dot", cUser: "YELLOW dot", cParent: "File", nPos: 1, cExec: "SetDot('yellow')"});
@@ -46,6 +50,42 @@ var get_identity_name = app.trustedFunction( function() {
 });
 
 
+//-----------------------------------------------------------------------------
+function ColsGuidesHide( _this ) {
+	var ann =false;
+
+	for (var p =0; p <_this.numPages; p ++) {
+		ann= _this.getAnnot( p, "JACoWColsGuides" );
+		if (ann != null) ann.destroy();
+	}
+}
+
+
+//-----------------------------------------------------------------------------
+function ColsGuidesShow() {
+	var ann= this.getAnnot( 0, "JACoWColsGuides" );
+
+	if (ann != null) {
+		ColsGuidesHide( this );
+		return;
+	}
+
+	for (var p =0; p <this.numPages; p ++) {
+		ann = this.addAnnot({
+			page: p,
+			name: "JACoWColsGuides",
+			popupOpen: false,
+			type: "Square",
+			rect: ColsGuidesBox,
+			strokeColor: color.blue,
+			fillColor: color.transparent,
+			width: 0.1
+			});
+	}
+}
+
+
+//-----------------------------------------------------------------------------
 function SetDot(_arg) {
 	var author = get_identity_name();
 	var re = /.*\/|\.pdf$/ig;
@@ -64,6 +104,8 @@ function SetDot(_arg) {
 	var QAarea = false;
 	var proceed = false;
 	var docNumPages = this.numPages;
+
+	ColsGuidesHide( this );
 	
 	// check filename
 	if (this.path.indexOf( 'AUTODISTILL' ) != -1) {
@@ -219,6 +261,8 @@ function SetDot(_arg) {
 
 
 function PrintPS(_arg) {
+	ColsGuidesHide( this );
+	
 	// crop the MediaBox first!
 	CropObj(this);
 	// OK, now let's save it to PS

@@ -1,11 +1,12 @@
-/* JACoW SetDot v20150504.0
-   by Ivan Andrian (C) ivan.andrian@elettra.eu 2013-14
+/* JACoW SetDot v20181202.0
+   by Ivan Andrian (C) ivan.andrian@elettra.eu 2013-18
    Sets the file(paperID) name, editor's name, timestamp 
    and a red/yellow/green dot on the top right corner of the
    first page of the document (in JACoW page size)
    See http://www.JACoW.org for more information
    
    History:
+   v20181202   - Added changes to CropBox and TrimBox as well due to problems with some "Save As" in Acrobat
    v20160507   - Added Cols Guides
    v20160506   - To overcome a security issue on Windows 10 that prevents getting the user's name
    v20151123   - Barcode new font
@@ -289,7 +290,9 @@ function CropAll(_arg) {
 }
 
 function CropObj(_obj) {
+	// Resize Mediabox to JACoW standard and remove CropBox
 	_obj.setPageBoxes("Media",0,_obj.numPages - 1,JACoWMediaBox);
+	_obj.setPageBoxes("Crop" ,0,_obj.numPages - 1);
 }
 
 function checkMediaBox(_obj, _pstart, _pend) {

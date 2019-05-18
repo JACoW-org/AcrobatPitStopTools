@@ -22,7 +22,7 @@
    
  */
 
-var Version = "v20160507";
+var Version = "v20181202";
 var PrintBarcode =true;
 var JACoWMediaBox = [0, 792, 595, 0];
 

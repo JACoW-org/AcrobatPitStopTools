@@ -1,12 +1,18 @@
-/* JACoW SetDot v20181202.0
-   by Ivan Andrian (C) ivan.andrian@elettra.eu 2013-18
+/* JACoW SetDot
+   by Ivan Andrian (C) ivan.andrian@elettra.eu 2013-19
+   
+   This File is distributed under CC-BY-4.0 license
+   https://creativecommons.org/licenses/by/4.0/   
+   
    Sets the file(paperID) name, editor's name, timestamp 
    and a red/yellow/green dot on the top right corner of the
    first page of the document (in JACoW page size)
    See http://www.JACoW.org for more information
    
+
    History:
-   v20181202   - Added changes to CropBox and TrimBox as well due to problems with some "Save As" in Acrobat
+   v20190822   - New opion "Save as Cropped PDF" to Crop'n'Save in one shot
+   v20181202   - Added changes to CropBox and MediaBox as well due to problems with some "Save As" in Acrobat
    v20160507   - Added Cols Guides
    v20160506   - To overcome a security issue on Windows 10 that prevents getting the user's name
    v20151123   - Barcode new font
@@ -22,7 +28,7 @@
    
  */
 
-var Version = "v20181202";
+var Version = "v20190822";
 var PrintBarcode =true;
 var JACoWMediaBox = [0, 792, 595, 0];
 
@@ -32,12 +38,13 @@ app.addMenuItem({ cName: "---------- " + Version + " ---------", cParent: "File"
 //app.addMenuItem({ cName: "Get Page MediaBox", cUser: "Get Page MediaBox", cParent: "File", nPos: 1, cExec: "AlertMS()"});
 //app.addMenuItem({ cName: "Separator", cUser: " ", cParent: "File", nPos: 1, cExec: "{}"});
 app.addMenuItem({ cName: "Save as Cropped PS", cUser: "Save as Cropped PS", cParent: "File", nPos: 1, cExec: "PrintPS()"});
-app.addMenuItem({ cName: "Crop MediaBox", cUser: "Crop", cParent: "File", nPos: 1, cExec: "CropAll()"});
+//app.addMenuItem({ cName: "Crop MediaBox", cUser: "Crop", cParent: "File", nPos: 1, cExec: "CropAll()"});
 app.addMenuItem({ cName: "Cols Guides", cUser: "Cols Guides On/Off", cParent: "File", nPos: 1, cExec: "ColsGuidesShow()"});
 app.addMenuItem({ cName: "BROWN dot", cUser: "BROWN dot", cParent: "File", nPos: 1, cExec: "SetDot('brown')"});
 app.addMenuItem({ cName: "RED dot", cUser: "RED dot", cParent: "File", nPos: 1, cExec: "SetDot('red')"});
 app.addMenuItem({ cName: "YELLOW dot", cUser: "YELLOW dot", cParent: "File", nPos: 1, cExec: "SetDot('yellow')"});
 app.addMenuItem({ cName: "GREEN dot", cUser: "GREEN dot", cParent: "File", nPos: 1, cExec: "SetDot('green')"});
+app.addMenuItem({ cName: "Crop and Save", cUser: "Crop and Save", cParent: "File", nPos: 1, cExec: "CropAndSave()"});
 app.addMenuItem({ cName: "----------JACoW utils ---------", cParent: "File", nPos: 1, cExec: "{}"});
 
 
@@ -274,6 +281,23 @@ function PrintPS(_arg) {
 	PathArr.push(this.path.replace(re1,"").replace(re2,"") +".ps");
 	this.saveAs(PathArr.join("/"), "com.adobe.acrobat.ps");
 }
+
+
+function CropAndSave(_arg) {
+	ColsGuidesHide( this );
+	
+	// crop the MediaBox first!
+	CropObj(this);
+	// OK, now let's save it to PS
+	var re1 = /.*\/|\_AUTHOR.*\.pdf|\.pdf$/ig;
+	var re2 = /\.PDF\.AUTODISTILL/ig;
+	var PathArr = this.path.split("/");
+	PathArr.pop();
+	PathArr.push(this.path.replace(re1,"").replace(re2,"") +".pdf");
+	this.saveAs(PathArr.join("/"));
+}
+
+
 
 function AlertMS(_arg) {
 	var thisMediaSize = this.getPageBox("Media",this.pageNum);

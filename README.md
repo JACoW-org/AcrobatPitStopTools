@@ -2,6 +2,7 @@
 
 * `JACoW-09.joboptions` - JACoW 2009 JobOptions for Acrobat Distiller
 * `JACoW-10.joboptions` - JACoW 2010 JobOptions for Acrobat Distiller
+* `JACoW-11.joboptions` - JACoW v11  JobOptions for Acrobat Distiller
 * `JACoW Media Box.eal` - JACoW Crop Media Box Action List for Enfocus PitStop
 * `JACoWSetDot.js`      - JACoW Acrobat extension to assign dots+ on paper
 * `SplitAnimations.ppa` - PowerPoint add-in to split animation when creating PDF
@@ -58,3 +59,15 @@ REFERENCES:
 ### SplitAnimations.ppa
 
 Put it into the` \Microsoft\Addins` folder.
+
+## Changelog
+
+### 20221020 `JACoW-11.joboptions` 
+Some problems with version 10 of the joboptions were experienced while using 
+Acrobat Pro DC (newest versions) at LINAC'22, IBIC'22 and PCaPAC'22. 
+The PDF print process hang. When killed you realise a PDF has been produced, 
+but it doesn't open in Acrobat automatically. With the next print the message
+reappears and an error message window is left open.
+
+A new job option file has been created from one of the Adobe ones 
+(High Quality Print) and added all JACoW specifics.

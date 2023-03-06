@@ -1,13 +1,14 @@
 # Acrobat/PitStop/PowerPoint scripts and tools
 
-* `JACoW-09.joboptions` - JACoW 2009 JobOptions for Acrobat Distiller
-* `JACoW-10.joboptions` - JACoW 2010 JobOptions for Acrobat Distiller
-* `JACoW-11.joboptions` - JACoW v11  JobOptions for Acrobat Distiller
-* `JACoW Media Box.eal` - JACoW Crop Media Box Action List for Enfocus PitStop
-* `JACoWSetDot.js`      - JACoW Acrobat extension to assign dots+ on paper
-* `SplitAnimations.ppa` - PowerPoint add-in to split animation when creating PDF
-* `SplitAnimations.ppt` - "Workspace" for developing the SplitAnimations.ppa PowerPoint add-in
-* `barcode_font`        - TrueType font needed by JACoWSetDot.js to create the barcode onto papers
+* `JACoW-09.joboptions`    - JACoW 2009 JobOptions for Acrobat Distiller
+* `JACoW-10.joboptions`    - JACoW 2010 JobOptions for Acrobat Distiller
+* `JACoW-11.joboptions`    - JACoW v11  JobOptions for Acrobat Distiller
+* `JACoW Media Box.eal`    - JACoW Crop Media Box Action List for Enfocus PitStop
+* `JACoWSetDot.js`         - JACoW Acrobat extension to assign dots+ on paper
+* `SplitAnimations.ppa`    - PowerPoint add-in to split animation when creating PDF
+* `SplitAnimations.ppt`    - "Workspace" for developing the SplitAnimations.ppa PowerPoint add-in
+* `barcode_font`           - TrueType font needed by JACoWSetDot.js to create the barcode onto papers
+* `embeddable_symbol_font` - A modified Symbol.ttf font for the editors that can be embedded
 
 ## Instructions on how to use these files.
 
@@ -60,7 +61,16 @@ REFERENCES:
 
 Put it into the` \Microsoft\Addins` folder.
 
+### embeddable_symbol_font
+
+Install this TrueType font on the workstations of the proceedings office
+
+
 ## Changelog
+
+### 20230306 `embeddable_symbol_font` 
+Modified symbol TrueType font to be used by editors in case
+"save as PS + distill" is needed.
 
 ### 20221020 `JACoW-11.joboptions` 
 Some problems with version 10 of the joboptions were experienced while using 

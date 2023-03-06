@@ -1,0 +1,48 @@
+fsType
+
+Format: 		uint16
+Title: 			Type flags.
+Description: 	Indicates font embedding licensing rights for the font. 
+				The interpretation of flags is as follows:
+
+Bit(s) 	Mask 	Description
+0 – 3 	0x000F 	Usage permissions. Valid fonts must set at most one of bits 1, 2 or 3; 
+				bit 0 is permanently reserved and must be zero. 
+				Valid values for this sub-field are 0, 2, 4 or 8. 
+				The meaning of these values is as follows:
+
+				0: Installable embedding: the font may be embedded, and may be permanently 
+				   installed for use on a remote systems, or for use by other users. 
+				   The user of the remote system acquires the identical rights, obligations 
+				   and licenses for that font as the original purchaser of the font, 
+				   and is subject to the same end-user license agreement, copyright, 
+				   design patent, and/or trademark as was the original purchaser.
+
+				2: Restricted License embedding: the font must not be modified, embedded 
+				   or exchanged in any manner without first obtaining explicit permission 
+				   of the legal owner.
+
+				4: Preview & Print embedding: the font may be embedded, and may be 
+				   temporarily loaded on other systems for purposes of viewing or 
+				   printing the document. Documents containing Preview & Print fonts 
+				   must be opened “read-only”; no edits can be applied to the document.
+
+				8: Editable embedding: the font may be embedded, and may be temporarily
+			       loaded on other systems. As with Preview & Print embedding, documents 
+				   containing Editable fonts may be opened for reading. In addition, 
+				   editing is permitted, including ability to format new text using 
+				   the embedded font, and changes may be saved.
+				   
+4 – 7 	  		Reserved, must be zero.
+
+8 		0x0100 	No subsetting: When this bit is set, the font may not be subsetted prior 
+				to embedding. Other embedding restrictions specified in bits 0 to 3 and 
+				bit 9 also apply.
+
+9 		0x0200 	Bitmap embedding only: When this bit is set, only bitmaps contained in 
+				the font may be embedded. No outline data may be embedded. 
+				If there are no bitmaps available in the font, then the font is 
+				considered unembeddable and the embedding services will fail. 
+				Other embedding restrictions specified in bits 0-3 and 8 also apply.
+
+10 – 15 	  	Reserved, must be zero.

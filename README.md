@@ -1,8 +1,10 @@
 # Acrobat/PitStop/PowerPoint scripts and tools
 
+* `JACoW.joboptions`       - Latest JobOptions for Acrobat Distiller
 * `JACoW-09.joboptions`    - JACoW 2009 JobOptions for Acrobat Distiller
 * `JACoW-10.joboptions`    - JACoW 2010 JobOptions for Acrobat Distiller
 * `JACoW-11.joboptions`    - JACoW v11  JobOptions for Acrobat Distiller
+* `JACoW-12.joboptions`    - JACoW v12  JobOptions for Acrobat Distiller (2023)
 * `JACoW Media Box.eal`    - JACoW Crop Media Box Action List for Enfocus PitStop
 * `JACoWSetDot.js`         - JACoW Acrobat extension to assign dots+ on paper
 * `SplitAnimations.ppa`    - PowerPoint add-in to split animation when creating PDF
@@ -67,6 +69,9 @@ Install this TrueType font on the workstations of the proceedings office
 
 
 ## Changelog
+
+### 20231117 `JACoW-12.joboptions` 
+Restored a number of options for image settings that got lost in v11
 
 ### 20230306 `embeddable_symbol_font` 
 Modified symbol TrueType font to be used by editors in case

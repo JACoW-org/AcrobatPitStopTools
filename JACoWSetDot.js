@@ -1,6 +1,6 @@
 /* JACoW SetDot
-   by Ivan Andrian (C) ivan.andrian@elettra.eu 2013-19
-   
+   by Ivan Andrian (C) ivan.andrian@elettra.eu 2013-25
+
    This File is distributed under CC-BY-4.0 license
    https://creativecommons.org/licenses/by/4.0/   
    
@@ -11,6 +11,7 @@
    
 
    History:
+   v20250528   - Dotting functions now check for rounded page sizes due to PDFcreator (or Word) creating 792x594.96pt instead of 792x595i
    v20190822   - New opion "Save as Cropped PDF" to Crop'n'Save in one shot
    v20181202   - Added changes to CropBox and MediaBox as well due to problems with some "Save As" in Acrobat
    v20160507   - Added Cols Guides
@@ -28,7 +29,7 @@
    
  */
 
-var Version = "v20190822";
+var Version = "v20250528";
 var PrintBarcode =true;
 var JACoWMediaBox = [0, 792, 595, 0];
 
@@ -288,7 +289,7 @@ function CropAndSave(_arg) {
 	
 	// crop the MediaBox first!
 	CropObj(this);
-	// OK, now let's save it to PS
+	// OK, now let's save it to PDF
 	var re1 = /.*\/|\_AUTHOR.*\.pdf|\.pdf$/ig;
 	var re2 = /\.PDF\.AUTODISTILL/ig;
 	var PathArr = this.path.split("/");
@@ -314,16 +315,21 @@ function CropAll(_arg) {
 }
 
 function CropObj(_obj) {
-	// Resize Mediabox to JACoW standard and remove CropBox
+	// Resize Mediabox and CropBox to JACoW standard
 	_obj.setPageBoxes("Media",0,_obj.numPages - 1,JACoWMediaBox);
-	_obj.setPageBoxes("Crop" ,0,_obj.numPages - 1);
+	_obj.setPageBoxes("Crop" ,0,_obj.numPages - 1,JACoWMediaBox);
 }
 
 function checkMediaBox(_obj, _pstart, _pend) {
 	var retval = true;
 	for(var i=_pstart ; i<_pend; i+=1) {	
 		var thisMediaSize = _obj.getPageBox("Media",i);
-		if (!(thisMediaSize[0] == 0 && thisMediaSize[1] == 792 && thisMediaSize[2] == 595 && thisMediaSize[3] == 0)) {
+		/* DEBUG
+		var thisMediaSizeC = _obj.getPageBox("Crop",i);
+		app.alert("Mediabox: " + thisMediaSize[0] + " x " + thisMediaSize[1] + " x " + thisMediaSize[2] + " x " + thisMediaSize[3] + "\r" +  
+		          "Cropbox:  " + thisMediaSizeC[0] + " x " + thisMediaSizeC[1] + " x " + thisMediaSizeC[2] + " x " + thisMediaSizeC[3], 0, 0, "Bad MediaBox");
+		*/ 
+		if (!(thisMediaSize[0] == 0 && Math.round(thisMediaSize[1]) == 792 && Math.round(thisMediaSize[2]) == 595 && thisMediaSize[3] == 0)) {
 			retval = false;
 		}
 	}

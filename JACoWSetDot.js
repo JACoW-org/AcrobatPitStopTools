@@ -11,6 +11,8 @@
    
 
    History:
+   
+   v20250530   - Compatibility with PDF-XChange Editor (by Raphael Mueller)
    v20250528   - Dotting functions now check for rounded page sizes due to PDFcreator (or Word) creating 792x594.96pt instead of 792x595i
    v20190822   - New opion "Save as Cropped PDF" to Crop'n'Save in one shot
    v20181202   - Added changes to CropBox and MediaBox as well due to problems with some "Save As" in Acrobat
@@ -26,10 +28,11 @@
    
    see http://partners.adobe.com/public/developer/en/acrobat/sdk/AcroJS.pdf for JS Reference
    and http://acrobatusers.com/tutorials/how-save-pdf-acrobat-javascript for save as etc.
+   and https://forum.pdf-xchange.com/viewtopic.php?t=40415 for saveAs priviliges in pdf-xchange
    
  */
 
-var Version = "v20250528";
+var Version = "v20250530";
 var PrintBarcode =true;
 var JACoWMediaBox = [0, 792, 595, 0];
 
@@ -48,6 +51,18 @@ app.addMenuItem({ cName: "GREEN dot", cUser: "GREEN dot", cParent: "File", nPos:
 app.addMenuItem({ cName: "Crop and Save", cUser: "Crop and Save", cParent: "File", nPos: 1, cExec: "CropAndSave()"});
 app.addMenuItem({ cName: "----------JACoW utils ---------", cParent: "File", nPos: 1, cExec: "{}"});
 
+// trusted function, used to raise privileges to access files / save
+// "this" should be passed in as "t" and "props" are the parameters for saveAs
+var save_privileged = app.trustedFunction( ( t, props ) => {
+	app.beginPriv();
+		t.saveAs(props);
+	app.endPriv();
+});
+var save_privileged_ps = app.trustedFunction( ( t, props ) => {
+	app.beginPriv();
+		t.saveAs(props,"com.adobe.acrobat.ps");
+	app.endPriv();
+});
 
 // Identity name privileged function
 // this fixes an issue with the apparently increased security context in Windowd 10
@@ -124,22 +139,23 @@ function SetDot(_arg) {
 	
 	
 	// create the dot
-	var dot = this.addAnnot( {
-		page: 0,
-		author: author,
-		name: "JACoWdot",
-		popupOpen: false,
-		rect: dcoords
-		});
-		
+	var dot = null;
 	switch (_arg) {
 		case 'brown':
+			dot = this.addAnnot( {
+				page: 0,
+				type: "Circle",
+				author: author,
+				name: "JACoWdot",
+				popupOpen: false,
+				rect: dcoords
+			});
 			proceed = true;
-			dot.type = "Circle";
 			dot.strokeColor =dot.fillColor =['RGB', 117/255, 71/255, 25/255];
 
 			var dot2 = this.addAnnot( {
 				page: 0,
+				type: "Circle",
 				author: author,
 				name: "JACoWdot2",
 				popupOpen: false,
@@ -149,19 +165,40 @@ function SetDot(_arg) {
 			dot2.strokeColor =dot2.fillColor =['RGB', 155/255, 125/255, 92/255];
 			break;
 		case 'red':
+			dot = this.addAnnot( {
+				page: 0,
+				type: "Square",
+				author: author,
+				name: "JACoWdot",
+				popupOpen: false,
+				rect: dcoords
+			});
 			proceed = true;
-			dot.type = "Square";
 			dot.strokeColor =dot.fillColor =color.red;
 			break;
 		case 'yellow':
+			dot = this.addAnnot( {
+				page: 0,
+				type: "Circle",
+				author: author,
+				name: "JACoWdot",
+				popupOpen: false,
+				rect: dcoords
+			});
 			proceed = checkMediaBox(this, 0, docNumPages);
-			dot.type = "Circle";
 			dot.strokeColor =dot.fillColor =['RGB',1,.88,0];
 			QAarea= true;
 			break;
 		case 'green':
+			dot = this.addAnnot( {
+				page: 0,
+				type: "Polygon",
+				author: author,
+				name: "JACoWdot",
+				popupOpen: false,
+				rect: dcoords
+			});
 			proceed = checkMediaBox(this, 0, docNumPages);
-			dot.type = "Polygon";
 			dot.vertices = [[x, y], [x, y +dotSize], [x +dotSize, y +dotSize/2]];
 			dot.strokeColor =dot.fillColor =color.green;
 			QAarea= true;
@@ -280,7 +317,7 @@ function PrintPS(_arg) {
 	var PathArr = this.path.split("/");
 	PathArr.pop();
 	PathArr.push(this.path.replace(re1,"").replace(re2,"") +".ps");
-	this.saveAs(PathArr.join("/"), "com.adobe.acrobat.ps");
+	save_privileged_ps(this, PathArr.join("/"));
 }
 
 
@@ -295,7 +332,7 @@ function CropAndSave(_arg) {
 	var PathArr = this.path.split("/");
 	PathArr.pop();
 	PathArr.push(this.path.replace(re1,"").replace(re2,"") +".pdf");
-	this.saveAs(PathArr.join("/"));
+	save_privileged(this, PathArr.join("/"));
 }
 
 
@@ -335,4 +372,3 @@ function checkMediaBox(_obj, _pstart, _pend) {
 	}
 	return retval;
 }
-

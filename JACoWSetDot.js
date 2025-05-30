@@ -11,6 +11,7 @@
    
 
    History:
+   
    v20250530   - Compatibility with PDF-XChange Editor (by Raphael Mueller)
    v20250528   - Dotting functions now check for rounded page sizes due to PDFcreator (or Word) creating 792x594.96pt instead of 792x595i
    v20190822   - New opion "Save as Cropped PDF" to Crop'n'Save in one shot
@@ -31,7 +32,7 @@
    
  */
 
-var Version = "v20250528";
+var Version = "v20250530";
 var PrintBarcode =true;
 var JACoWMediaBox = [0, 792, 595, 0];
 

@@ -11,6 +11,7 @@
 * `SplitAnimations.ppt`    - "Workspace" for developing the SplitAnimations.ppa PowerPoint add-in
 * `barcode_font`           - TrueType font needed by JACoWSetDot.js to create the barcode onto papers
 * `embeddable_symbol_font` - A modified Symbol.ttf font for the editors that can be embedded
+* `ISO4_abbreviations_for_journal_titles.txsMacro` - TeXstudio macro to shorten Journal Titles
 
 ## Instructions on how to use these files.
 
@@ -66,6 +67,14 @@ Put it into the` \Microsoft\Addins` folder.
 ### embeddable_symbol_font
 
 Install this TrueType font on the workstations of the proceedings office
+
+### ISO4_abbreviations_for_journal_titles.txsMacro
+
+Install cURL on your system (must be reachable just by calling `curl` on the command line)
+Open TeXstudio → Macros → Edit Macros ...
+Click the Import button, browse and import the txsMacro file
+Select something in the source file or bibtex database and 
+open Macros → ISO4 abbreviations for Journal Titles
 
 
 ## Changelog

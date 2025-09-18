@@ -32,7 +32,7 @@
    
  */
 
-var Version = "v20250530";
+var Version = "v20250918";
 var PrintBarcode =true;
 var JACoWMediaBox = [0, 792, 595, 0];
 
@@ -352,9 +352,9 @@ function CropAll(_arg) {
 }
 
 function CropObj(_obj) {
-	// Resize Mediabox and CropBox to JACoW standard
+	// Resize Mediabox to JACoW standard, remove CropBox 
 	_obj.setPageBoxes("Media",0,_obj.numPages - 1,JACoWMediaBox);
-	_obj.setPageBoxes("Crop" ,0,_obj.numPages - 1,JACoWMediaBox);
+	_obj.setPageBoxes("Crop" ,0,_obj.numPages - 1); // this command used to fail with PDF-XChange < build 394
 }
 
 function checkMediaBox(_obj, _pstart, _pend) {

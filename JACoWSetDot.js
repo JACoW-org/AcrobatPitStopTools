@@ -12,6 +12,7 @@
 
    History:
    
+   v20250918   - Fixed issue with setting the Crop Box misplacing the headers/footers added by CAT
    v20250530   - Compatibility with PDF-XChange Editor (by Raphael Mueller)
    v20250528   - Dotting functions now check for rounded page sizes due to PDFcreator (or Word) creating 792x594.96pt instead of 792x595i
    v20190822   - New opion "Save as Cropped PDF" to Crop'n'Save in one shot

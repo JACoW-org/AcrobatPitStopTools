@@ -68,16 +68,12 @@ Put it into the` \Microsoft\Addins` folder.
 
 Install this TrueType font on the workstations of the proceedings office
 
-### ISO4_abbreviations_for_journal_titles.txsMacro
-
-Install cURL on your system (must be reachable just by calling `curl` on the command line)
-Open TeXstudio → Macros → Edit Macros ...
-Click the Import button, browse and import the txsMacro file
-Select something in the source file or bibtex database and 
-open Macros → ISO4 abbreviations for Journal Titles
-
 
 ## Changelog
+
+### 20250918 `JACoWSetDot.js` 
+Added compatibility with PDF-XChange. 
+See source file for more details.
 
 ### 20231117 `JACoW-12.joboptions` 
 Restored a number of options for image settings that got lost in v11
